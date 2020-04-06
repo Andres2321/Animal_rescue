@@ -1,0 +1,236 @@
+  [1m[35m (164.0ms)[0m  [1m[35mCREATE DATABASE "Animal_rescue_development" ENCODING = 'unicode'[0m
+  [1m[35m (102.4ms)[0m  [1m[35mCREATE DATABASE "Animal_rescue_test" ENCODING = 'unicode'[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(346310455200782940)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDogs (20200406154730)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" bigserial primary key, "name" character varying, "breed" character varying, "age" integer, "gender" character varying, "size" character varying, "color" character varying, "image_url" character varying, "spayed_neutered" character varying, "housetrained" character varying, "description" character varying, "good_with_dogs" character varying, "good_with_cats" character varying, "good_with_kids" character varying, "location_name" character varying, "location_address" character varying, "intake_date" character varying, "adoption_price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406154730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCats (20200406155005)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "cats" ("id" bigserial primary key, "name" character varying, "breed" character varying, "age" integer, "gender" character varying, "size" character varying, "color" character varying, "image_url" character varying, "spayed_neutered" character varying, "declawed" character varying, "housetrained" character varying, "description" character varying, "good_with_dogs" character varying, "good_with_cats" character varying, "good_with_kids" character varying, "location_name" character varying, "location_address" character varying, "intake_date" character varying, "adoption_price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406155005"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-06 15:52:40.429537"], ["updated_at", "2020-04-06 15:52:40.429537"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(346310455200782940)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/dogs" for ::1 at 2020-04-06 11:54:11 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.9ms | Allocations: 208)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDog Create (1.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "gender", "size", "color", "image_url", "spayed_neutered", "housetrained", "description", "good_with_dogs", "good_with_cats", "good_with_kids", "location_name", "location_address", "intake_date", "adoption_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", "Leo"], ["breed", "Lab/rotti mix"], ["age", 10], ["gender", "Male"], ["size", "large"], ["color", "Black"], ["image_url", "Leo.com"], ["spayed_neutered", "yes"], ["housetrained", "yes"], ["description", "A good boy"], ["good_with_dogs", "yes"], ["good_with_cats", "yes"], ["good_with_kids", "yes"], ["location_name", "none"], ["location_address", "none"], ["intake_date", "July 23, 2010"], ["adoption_price", 100000], ["created_at", "2020-04-06 15:59:33.132751"], ["updated_at", "2020-04-06 15:59:33.132751"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (0.6ms)[0m  [1m[32mINSERT INTO "cats" ("name", "breed", "age", "gender", "size", "color", "image_url", "spayed_neutered", "housetrained", "description", "good_with_dogs", "good_with_cats", "good_with_kids", "location_name", "location_address", "intake_date", "adoption_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", "Leela"], ["breed", "Scottish Fold"], ["age", 3], ["gender", "Female"], ["size", "Small"], ["color", "White"], ["image_url", "Leela.com"], ["spayed_neutered", "yes"], ["housetrained", "yes"], ["description", "A good girl"], ["good_with_dogs", "yes"], ["good_with_cats", "yes"], ["good_with_kids", "yes"], ["location_name", "none"], ["location_address", "none"], ["intake_date", "July 23, 2017"], ["adoption_price", 100000], ["created_at", "2020-04-06 15:59:33.191499"], ["updated_at", "2020-04-06 15:59:33.191499"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mDog Load (0.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDog Destroy (0.4ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDog Create (0.8ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "gender", "size", "color", "image_url", "spayed_neutered", "housetrained", "description", "good_with_dogs", "good_with_cats", "good_with_kids", "location_name", "location_address", "intake_date", "adoption_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", "Leo"], ["breed", "Lab/rotti mix"], ["age", 10], ["gender", "Male"], ["size", "large"], ["color", "Black"], ["image_url", "Leo.com"], ["spayed_neutered", "Yes"], ["housetrained", "Yes"], ["description", "A good boy"], ["good_with_dogs", "Yes"], ["good_with_cats", "Yes"], ["good_with_kids", "Yes"], ["location_name", "None"], ["location_address", "None"], ["intake_date", "July 23, 2010"], ["adoption_price", 100000], ["created_at", "2020-04-06 16:01:19.823936"], ["updated_at", "2020-04-06 16:01:19.823936"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("name", "breed", "age", "gender", "size", "color", "image_url", "spayed_neutered", "declawed", "housetrained", "description", "good_with_dogs", "good_with_cats", "good_with_kids", "location_name", "location_address", "intake_date", "adoption_price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["name", "Leela"], ["breed", "Scottish Fold"], ["age", 3], ["gender", "Female"], ["size", "Small"], ["color", "White"], ["image_url", "Leela.com"], ["spayed_neutered", "Yes"], ["declawed", "No"], ["housetrained", "Yes"], ["description", "A good girl"], ["good_with_dogs", "Yes"], ["good_with_cats", "Yes"], ["good_with_kids", "Yes"], ["location_name", "None"], ["location_address", "None"], ["intake_date", "July 23, 2017"], ["adoption_price", 100000], ["created_at", "2020-04-06 16:01:19.831356"], ["updated_at", "2020-04-06 16:01:19.831356"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/dogs" for ::1 at 2020-04-06 12:02:06 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.7ms | Allocations: 208)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:02:09 -0400
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:02:10 -0400
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:02:11 -0400
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 137)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:03:01 -0400
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 135)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:03:24 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 1.6ms | Allocations: 208)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started POST "/dogs" for ::1 at 2020-04-06 12:04:49 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DogsController#create as */*
+  Parameters: {"food"=>{"name"=>"donut"}, "dog"=>{}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 3.3ms | Allocations: 208)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dog):
+  
+app/controllers/dogs_controller.rb:49:in `dog_params'
+app/controllers/dogs_controller.rb:18:in `create'
+Started GET "/" for ::1 at 2020-04-06 12:05:09 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andres/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andres/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.1ms | Allocations: 482)
+Completed 200 OK in 42ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 2713)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-04-06 12:05:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/dogs" for ::1 at 2020-04-06 12:05:13 -0400
+Processing by DogsController#index as HTML
+  [1m[36mDog Load (1.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  ↳ app/controllers/dogs_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 4.9ms | Allocations: 13168)
+
+
+Started GET "/cats" for ::1 at 2020-04-06 12:05:21 -0400
+Processing by CatsController#index as HTML
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 3.3ms | Allocations: 14332)
+
+
+Started GET "/cats/1" for ::1 at 2020-04-06 12:05:24 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:44:in `set_cat'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.0ms | Allocations: 1110)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Cat with 'id'=1):
+  
+app/controllers/cats_controller.rb:44:in `set_cat'
+Started GET "/dogs/1" for ::1 at 2020-04-06 12:05:36 -0400
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dogs_controller.rb:44:in `set_dog'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 749)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dog with 'id'=1):
+  
+app/controllers/dogs_controller.rb:44:in `set_dog'
+Started GET "/dogs" for ::1 at 2020-04-06 12:05:48 -0400
+Processing by DogsController#index as HTML
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  ↳ app/controllers/dogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1162)
+
+
+Started GET "/dogs/2" for ::1 at 2020-04-06 12:05:52 -0400
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dogs_controller.rb:44:in `set_dog'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 973)
+
+
+Started GET "/dogs" for ::1 at 2020-04-06 12:06:21 -0400
+Processing by DogsController#index as */*
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  ↳ app/controllers/dogs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1165)
+
+

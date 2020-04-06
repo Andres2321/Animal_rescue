@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  age: 1
+  gender: MyString
+  size: MyString
+  color: MyString
+  image_url: MyString
+  spayed_neutered: MyString
+  declawed: MyString
+  housetrained: MyString
+  description: MyString
+  good_with_dogs: MyString
+  good_with_cats: MyString
+  good_with_kids: MyString
+  location_name: MyString
+  location_address: MyString
+  intake_date: MyString
+  adoption_price: 1
+  references: 
+
+two:
+  name: MyString
+  breed: MyString
+  age: 1
+  gender: MyString
+  size: MyString
+  color: MyString
+  image_url: MyString
+  spayed_neutered: MyString
+  declawed: MyString
+  housetrained: MyString
+  description: MyString
+  good_with_dogs: MyString
+  good_with_cats: MyString
+  good_with_kids: MyString
+  location_name: MyString
+  location_address: MyString
+  intake_date: MyString
+  adoption_price: 1
+  references: 
