@@ -25,7 +25,7 @@ function SimpleMenu() {
         </Link>
         </h1>
         <div className='flex row'>
-          <img className='looking-glass center' src="https://img.icons8.com/search"></img>
+          <img className='looking-glass center' src="https://img.icons8.com/search" alt='looking glass'></img>
           <Link to='/register' className='center sign-up'>
             <h3>Sign Up</h3>
           </Link>
@@ -86,17 +86,17 @@ function SimpleMenu() {
           <MenuItem onClick={handleClose}>Contact us</MenuItem>
         </Menu> */}
 
-      <div className='flex row'>
+      {/* <div className='flex row'>
 
         <div className='dropdown-container'>
         <button className='dropdown-container'>
           Adoption
         </button>
         <div className='dropdown-content'>
-          <a>Adoption Details</a>
-          <a>Barn Cats</a>
-          <a>Medically Needy Animals</a>
-          <a>For Seniors</a>
+          <a href=''>Adoption Details</a>
+          <a href=''>Barn Cats</a>
+          <a href=''>Medically Needy Animals</a>
+          <a href=''>For Seniors</a>
         </div>
         </div>
 
@@ -104,24 +104,24 @@ function SimpleMenu() {
           Services
         </button>
         <div className='dropdown-content'>
-          <a>Spayes/Neutered</a>
-          <a>Bording</a>
-          <a>Grooming</a>
-          <a>Euthanasia and Cremation</a>
+          <a href=''>Spayes/Neutered</a>
+          <a href=''>Bording</a>
+          <a href=''>Grooming</a>
+          <a href=''>Euthanasia and Cremation</a>
         </div>
         <button className='dropdown-btn'>
           About Us
         </button>
         <div className='dropdown-content'>
-          <a>Ways to Help</a>
-          <a>Supply Wishlist</a>
-          <a>Employment</a>
-          <a>Blog</a>
-          <a>Animal Cruelty</a>
-          <a>Local Resources</a>
-          <a>Contact us</a>
+          <a href=''>Ways to Help</a>
+          <a href=''>Supply Wishlist</a>
+          <a href=''>Employment</a>
+          <a href=''>Blog</a>
+          <a href=''>Animal Cruelty</a>
+          <a href=''>Local Resources</a>
+          <a href=''>Contact us</a>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

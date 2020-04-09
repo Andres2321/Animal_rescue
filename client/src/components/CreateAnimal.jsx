@@ -1,12 +1,12 @@
 import React from 'react'
 
 function CreateAnimal(props) {
-  const { animalForm, handleFormChange} = props
+  const { animalForm, handleFormChange, newAnimal} = props
   return (
 
     <div>
       Create Animal
-      <form className='flex column'>
+      <form className='flex column' onSubmit={newAnimal}>
         <input
           type='text'
           name='species'

@@ -2,24 +2,30 @@ import React from 'react'
 
 
 function Animals(props) {
-  const { allAnimals } = props
-
-    const displayAnimals = allAnimals.map((animal) => {
-      return (
-        <>
-        <img src={animal.image_url}/>
-        <h1>Name: {animal.name}</h1>
-        <p>Breed: {animal.breed}</p>
-        <p>Age: {animal.age}</p>
-        <p>Gender: {animal.gender}</p>
-        <p>Size: {animal.size}</p>
-        </>
-      )
-    })
-  
+  const { currentUser, animals, animalForm, handleFormChange, newAnimal} = props
   return (
     <div>
-      {displayAnimals}
+      {animals.map(animal => (
+        <div
+          key={animal.id}
+          onClick={(e) => {
+            if (currentUser) {
+              props.history.push(`/animals/${animal.id}`)
+            } else {
+              props.history.push('/login')
+            }
+          }}>
+          <img alt={animal.name} src={animal.image_url} />
+          <p>{animal.name}</p>
+          <p>{animal.breed}</p>
+          <p>{animal.gender}</p>
+        </div>
+      ))}
+      <div
+        onClick={() => {
+          props.history.push('/new/animal')
+      }}>
+      </div>
     </div>
   )
 }
