@@ -6,6 +6,7 @@ import Register from './components/Register'
 import Header from './components/Header'
 import Animals from './components/Animals'
 import CreateAnimal from './components/CreateAnimal'
+import AnimalDetails from './components/AnimalDetails'
 
 import {
   loginUser,
@@ -25,7 +26,7 @@ class Container extends Component {
     this.state = {
       currentUser: null,
       animals: [],
-      animal: null,
+      animal: '',
       animalForm: {
         species: '',
         name: '',
@@ -58,9 +59,6 @@ class Container extends Component {
   componentDidMount = () => {
     this.getAnimals()
     this.getAnimal()
-    this.newAnimal()
-    this.updateAnimal()
-    this.deleteAnimal()
   }
 
   // ===============API Data==================
@@ -126,7 +124,7 @@ class Container extends Component {
       }
     ))
   }
-  
+
   // Delete an animal
   deleteAnimal = async (id) => {
     await deleteAnimal(id)
@@ -155,7 +153,7 @@ class Container extends Component {
 
   handleFormChange = (e) => {
     const { name, value } = e.target
-      this.setState(prevState => ({
+    this.setState(prevState => ({
       animalForm: {
         ...prevState.animalForm,
         [name]: value
@@ -231,6 +229,7 @@ class Container extends Component {
               />
             )}
           />
+
           <Route
             exact
             path='/animals/create'
@@ -242,6 +241,15 @@ class Container extends Component {
               />
             )}
           />
+
+          <Route
+            exact
+            path='/animals/:id'
+            render={() => (
+              <AnimalDetails />
+            )}
+          />
+
           <Route
             path='/'
             component={Home}
