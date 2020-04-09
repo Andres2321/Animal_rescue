@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from './Container'
 import './Styles/header.css'
+import './Styles/Home.css'
 
 
 

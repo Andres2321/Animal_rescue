@@ -134,7 +134,6 @@ class Container extends Component {
   }
 
   // ===============Auth=====================
-
   handleLogin = async (e) => {
     e.preventDefault()
     const currentUser = await loginUser(this.state.authFormData)
@@ -160,8 +159,8 @@ class Container extends Component {
       }
     }))
   }
-  // ===============Verification=============
 
+  // ===============Verification=============
   handleVerify = async () => {
     const currentUser = await verifyUser()
     if (currentUser) {
@@ -197,7 +196,6 @@ class Container extends Component {
       <>
         <Header />
 
-
         {/* =================Routes================= */}
         <Switch>
           <Route
@@ -210,6 +208,7 @@ class Container extends Component {
                 formData={authFormData} />
             )}
           />
+
           <Route
             exact
             path='/register'
@@ -220,6 +219,7 @@ class Container extends Component {
                 formData={authFormData}
               />)}
           />
+
           <Route
             exact
             path='/animals'

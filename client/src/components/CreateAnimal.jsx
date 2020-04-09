@@ -1,13 +1,13 @@
 import React from 'react'
-import { Input } from '@material-ui/core';
 
 function CreateAnimal(props) {
   const { animalForm, handleFormChange} = props
   return (
+
     <div>
       Create Animal
       <form className='flex column'>
-        <Input
+        <input
           type='text'
           name='species'
           value={animalForm.species}
@@ -15,7 +15,7 @@ function CreateAnimal(props) {
           placeholder='Cat or Dog'
         />
 
-        <Input
+        <input
           type='text'
           name='name'
           value={animalForm.name}
@@ -23,7 +23,7 @@ function CreateAnimal(props) {
           placeholder='Name'
         />
 
-        <Input
+        <input
           type='text'
           name='breed'
           value={animalForm.breed}
@@ -31,7 +31,7 @@ function CreateAnimal(props) {
           placeholder='Breed'
         />
 
-        <Input
+        <input
           type='text'
           name='age'
           value={animalForm.age}
@@ -39,7 +39,7 @@ function CreateAnimal(props) {
           placeholder='Age'
         />
 
-        <Input
+        <input
           type='text'
           name='gender'
           value={animalForm.gender}
@@ -47,7 +47,7 @@ function CreateAnimal(props) {
           placeholder='Gender'
         />
 
-        <Input
+        <input
           type='text'
           name='size'
           value={animalForm.size}
@@ -55,7 +55,7 @@ function CreateAnimal(props) {
           placeholder='Size'
         />
 
-        <Input
+        <input
           type='text'
           name='color'
           value={animalForm.color}
@@ -63,7 +63,7 @@ function CreateAnimal(props) {
           placeholder='Color'
         />
 
-        <Input
+        <input
           type='text'
           name='image_url'
           value={animalForm.image_url}
@@ -71,7 +71,7 @@ function CreateAnimal(props) {
           placeholder='Image Link'
         />
 
-        <Input
+        <input
           type='text'
           name='spayed_neutered'
           value={animalForm.spayed_neutered}
@@ -79,7 +79,7 @@ function CreateAnimal(props) {
           placeholder='Spayed or Neutered'
         />
 
-        <Input
+        <input
           type='text'
           name='declawed'
           value={animalForm.declawed}
@@ -87,7 +87,7 @@ function CreateAnimal(props) {
           placeholder='Declawed'
         />
 
-        <Input
+        <input
           type='text'
           name='housetrained'
           value={animalForm.housetrained}
@@ -95,7 +95,7 @@ function CreateAnimal(props) {
           placeholder='Housetrained'
         />
 
-        <Input
+        <input
           type='text'
           name='description'
           value={animalForm.description}
@@ -103,7 +103,7 @@ function CreateAnimal(props) {
           placeholder='Description'
         />
 
-        <Input
+        <input
           type='text'
           name='good_with_dogs'
           value={animalForm.good_with_dogs}
@@ -111,7 +111,7 @@ function CreateAnimal(props) {
           placeholder='Good with dogs'
         />
 
-        <Input
+        <input
           type='text'
           name='good_with_cats'
           value={animalForm.good_with_cats}
@@ -119,7 +119,7 @@ function CreateAnimal(props) {
           placeholder='Good with cats'
         />
 
-        <Input
+        <input
           type='text'
           name='good_with_kids'
           value={animalForm.good_with_kids}
@@ -127,7 +127,7 @@ function CreateAnimal(props) {
           placeholder='Good with kids'
         />
 
-        <Input
+        <input
           type='text'
           name='location_name'
           value={animalForm.location_name}
@@ -135,7 +135,7 @@ function CreateAnimal(props) {
           placeholder='Location name'
         />
 
-        <Input
+        <input
           type='text'
           name='location_address'
           value={animalForm.location_address}
@@ -143,7 +143,7 @@ function CreateAnimal(props) {
           placeholder='Location address'
         />
 
-        <Input
+        <input
           type='text'
           name='intake_date'
           value={animalForm.intake_date}
@@ -151,7 +151,7 @@ function CreateAnimal(props) {
           placeholder='Intake Date'
         />
 
-        <Input
+        <input
           type='text'
           name='adoption_price'
           value={animalForm.adoption_price}

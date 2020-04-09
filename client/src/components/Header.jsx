@@ -1,20 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
+// import Button from '@material-ui/core/Button'
+// import Menu from '@material-ui/core/Menu'
+// import MenuItem from '@material-ui/core/MenuItem'
 
 
 function SimpleMenu() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+//   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+//   const handleClick = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+//   const handleClose = () => {
+//     setAnchorEl(null);
+//   };
 
   return (
     <>
@@ -35,7 +35,7 @@ function SimpleMenu() {
         </div>
       </div>
 
-        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        {/* <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           Adoption
         </Button>
         <Menu
@@ -84,9 +84,9 @@ function SimpleMenu() {
           <MenuItem onClick={handleClose}>Animal Cruelty</MenuItem>
           <MenuItem onClick={handleClose}>Local Resources</MenuItem>
           <MenuItem onClick={handleClose}>Contact us</MenuItem>
-        </Menu>
+        </Menu> */}
 
-      {/* <div className='flex row'>
+      <div className='flex row'>
 
         <div className='dropdown-container'>
         <button className='dropdown-container'>
@@ -98,9 +98,9 @@ function SimpleMenu() {
           <a>Medically Needy Animals</a>
           <a>For Seniors</a>
         </div>
-        </div> */}
+        </div>
 
-      {/* <button className='dropdown-btn'>
+      <button className='dropdown-btn'>
           Services
         </button>
         <div className='dropdown-content'>
@@ -121,7 +121,7 @@ function SimpleMenu() {
           <a>Local Resources</a>
           <a>Contact us</a>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
