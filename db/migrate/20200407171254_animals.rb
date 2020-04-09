@@ -20,8 +20,6 @@ class Animals < ActiveRecord::Migration[6.0]
       t.string :location_address
       t.string :intake_date
       t.integer :adoption_price
-      t.references :user, null: false, foreign_key: true
-      t.references :like, null: true, foreign_key: true
 
       t.timestamps
     end

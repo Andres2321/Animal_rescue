@@ -16,11 +16,11 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = user.new(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       @token = encode({user_id: @user.id, username: @user.username})
-      render json: @user, status: :created, location: @user
+      render json: {user: @user, token: @token }, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
