@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function Animals(props) {
-  const { currentUser, animals, animalForm, handleFormChange, newAnimal} = props
+  const { currentUser, animals} = props
   return (
     <div>
       {animals.map(animal => (

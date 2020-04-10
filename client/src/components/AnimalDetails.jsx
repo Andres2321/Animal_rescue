@@ -28,13 +28,16 @@ class AnimalDetails extends Component {
           <div>
             <img alt={animal.name} src={animal.image_url} />
             {isEdit ?
-              <Route path={'/animals/:id/edit'} render={() => (
+              <Route
+                exact
+                path={'/animals/:id/edit'}
+                render={() => (
                   <EditAnimal
                     handleFormChange={handleFormChange}
                     handleSubmit={(e) => {
                       e.preventDefault()
                       updateAnimal()
-                      // this.setState({ isEdit: false })
+                      this.setState({ isEdit: false })
                       this.props.history.push(`animals/${animalForm.id}`)
                     }}
                     animalForm={animalForm} />
@@ -43,13 +46,13 @@ class AnimalDetails extends Component {
               <>
                 <h1>{animal.name}</h1>
                 <button onClick={() => {
-                  // this.setState({ isEdit: true })
+                  this.setState({ isEdit: true })
                   this.props.history.push(`/animals/${animal.id}/edit`)
                 }}>Edit</button>
                 <button
                   onClick={() => {
                     deleteAnimal(animal.id)
-                    this.props.history.push('/')
+                    this.props.history.push('/animals')
                   }}>Delete</button>
               </>
             }

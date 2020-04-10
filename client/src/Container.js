@@ -194,23 +194,28 @@ class Container extends Component {
   }
 
   render() {
-    const { handleLogin, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, deleteAnimal, mountEditForm } = this
+    const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, deleteAnimal, mountEditForm } = this
     const { authFormData, animals, animalForm, currentUser } = this.state
     return (
       <>
-        <Header />
+        <Header
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+        />
 
         {/* =================Routes================= */}
         <Switch>
           <Route
             exact
             path='/login'
-            render={() => (
+            render={(props) => 
               <Login
+                {...props}
+                currentUser={currentUser}
                 handleLogin={handleLogin}
                 handleChange={authHandleChange}
                 formData={authFormData} />
-            )}
+            }
           />
 
           <Route

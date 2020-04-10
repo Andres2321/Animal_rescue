@@ -34,7 +34,7 @@ function CreateAnimal(props) {
         <input
           type='text'
           name='age'
-          value={animalForm.age}
+          value={animalForm.age || ''}
           onChange={handleFormChange}
           placeholder='Age'
         />
@@ -154,7 +154,7 @@ function CreateAnimal(props) {
         <input
           type='text'
           name='adoption_price'
-          value={animalForm.adoption_price}
+          value={animalForm.adoption_price || ''}
           onChange={handleFormChange}
           placeholder='Price'
         />

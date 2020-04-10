@@ -4,7 +4,7 @@ function EditAnimal(props) {
 
   return (
     <div>
-
+      Edit Animal
     </div>
   )
 }
