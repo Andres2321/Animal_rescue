@@ -8,6 +8,7 @@ function Animals(props) {
       {animals.map(animal => (
         <div
           key={animal.id}
+        
           onClick={(e) => {
             if (currentUser) {
               props.history.push(`/animals/${animal.id}`)
@@ -15,6 +16,7 @@ function Animals(props) {
               props.history.push('/login')
             }
           }}>
+
           <img alt={animal.name} src={animal.image_url} />
           <p>{animal.name}</p>
           <p>{animal.breed}</p>

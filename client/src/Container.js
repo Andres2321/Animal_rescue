@@ -56,9 +56,14 @@ class Container extends Component {
     }
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     this.getAnimals()
-    this.getAnimal()
+    const currentUser = await verifyUser()
+    if (currentUser) {
+      this.setState({
+        currentUser
+      })
+    }
   }
 
   // ===============API Data==================
@@ -110,178 +115,170 @@ class Container extends Component {
     }))
   }
 
-    // Update an animal
-    updateAnimal = async () => {
-      const { animalForm } = this.state
-      const editAnimal = await updateAnimal(animalForm.id, animalForm)
-      this.setState(prevState => (
-        {
-          animals: prevState.animals.map(animal => {
-            return (
-              animal.id === animalForm.id ? editAnimal : animal
-            )
-          })
-        }
-      ))
-    }
-  
+  // Update an animal
+  updateAnimal = async () => {
+    const { animalForm } = this.state
+    const editAnimal = await updateAnimal(animalForm.id, animalForm)
+    this.setState(prevState => (
+      {
+        animals: prevState.animals.map(animal => {
+          return (
+            animal.id === animalForm.id ? editAnimal : animal
+          )
+        })
+      }
+    ))
+  }
+
   mountEditForm = async (id) => {
     const animals = await showAnimals()
-    const animal = animals.find(item => item.id == parseInt(id))
+    const animal = animals.find(item => item.id === parseInt(id))
     this.setState({
       animalForm: animal
     })
-    }
-  
-    // Will store form inputs in state
-    handleFormChange = (e) => {
-      const { name, value } = e.target
-      this.setState(prevState => ({
-        animalForm: {
-          ...prevState.animalForm,
-          [name]: value
-        }
-      }))
-    }
-  
-    // Delete an animal
-    deleteAnimal = async (id) => {
-      await deleteAnimal(id)
-      this.setState(prevState => ({
-        animals: prevState.animals.filter(animal => animal.id !== id)
-      }))
-    }
-
-    // ===============Auth=====================
-    handleLogin = async (e) => {
-      e.preventDefault()
-      const currentUser = await loginUser(this.state.authFormData)
-      this.setState({
-        currentUser
-      })
-    }
-
-    handleRegister = async (e) => {
-      e.preventDefault()
-      const currentUser = await registerUser(this.state.authFormData)
-      this.setState({
-        currentUser
-      })
-    }
-
-    // ===============Verification=============
-    handleVerify = async () => {
-      const currentUser = await verifyUser()
-      if (currentUser) {
-        this.setState({
-          currentUser
-        })
-      }
-    }
-
-    handleLogout = () => {
-      localStorage.removeItem("jwt")
-      this.setState({
-        currentUser: null
-      })
-      removeToken()
-    }
-
-    authHandleChange = (e) => {
-      const { name, value } = e.target
-      this.setState(prevState => ({
-        authFormData: {
-          ...prevState.authFormData,
-          [name]: value
-        }
-      }))
-    }
-
-    render(){
-      const { handleLogin, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, deleteAnimal, mountEditForm } = this
-      const { authFormData, animals, animalForm, currentUser } = this.state
-      return (
-        <>
-          <Header />
-
-          {/* =================Routes================= */}
-          <Switch>
-            <Route
-              exact
-              path='/login'
-              render={() => (
-                <Login
-                  handleLogin={handleLogin}
-                  handleChange={authHandleChange}
-                  formData={authFormData} />
-              )}
-            />
-
-            <Route
-              exact
-              path='/register'
-              render={() => (
-                <Register
-                  handleRegister={handleRegister}
-                  handleChange={authHandleChange}
-                  formData={authFormData}
-                />)}
-            />
-
-            <Route
-              exact
-              path='/animals'
-              render={(props) =>
-                <Animals
-                  {...props}
-                  currentUser={currentUser}
-                  animals={animals}
-                  animalForm={animalForm}
-                  handleFormChange={handleFormChange}
-                  newAnimal={newAnimal}
-                />
-              }
-            />
-
-            <Route
-              exact
-              path='/animals/create'
-              render={() => (
-                <CreateAnimal
-                  handleFormChange={handleFormChange}
-                  animalForm={animalForm}
-                  newAnimal={newAnimal}
-                />
-              )}
-            />
-
-            <Route
-              exact
-              path='/animals/:id'
-              render={(props) => {
-                const { id } = props.match.params
-                const animal = this.state.animals.find(item => item.id == parseInt(id))
-                return <AnimalDetails
-                  id={id}
-                  animal={animal}
-                  handleFormChange={handleFormChange}
-                  mountEditForm={mountEditForm}
-                  updateAnimal={updateAnimal}
-                  animalForm={animalForm}
-                  deleteAnimal={deleteAnimal}
-                />
-              }}
-            />
-
-            <Route
-              path='/'
-              component={Home}
-            />
-          </Switch>
-        </>
-      )
-    }
   }
+
+  // Will store form inputs in state
+  handleFormChange = (e) => {
+    const { name, value } = e.target
+    this.setState(prevState => ({
+      animalForm: {
+        ...prevState.animalForm,
+        [name]: value
+      }
+    }))
+  }
+
+  // Delete an animal
+  deleteAnimal = async (id) => {
+    await deleteAnimal(id)
+    this.setState(prevState => ({
+      animals: prevState.animals.filter(animal => animal.id !== id)
+    }))
+  }
+
+  // ===============Auth=====================
+
+  handleLogin = async (e) => {
+    e.preventDefault()
+    const currentUser = await loginUser(this.state.authFormData)
+    this.setState({
+      currentUser
+    })
+  }
+
+  handleRegister = async (e) => {
+    e.preventDefault()
+    const currentUser = await registerUser(this.state.authFormData)
+    this.setState({
+      currentUser
+    })
+  }
+
+  handleLogout = () => {
+    localStorage.removeItem("jwt")
+    this.setState({
+      currentUser: null
+    })
+    removeToken()
+  }
+
+  authHandleChange = (e) => {
+    const { name, value } = e.target
+    this.setState(prevState => ({
+      authFormData: {
+        ...prevState.authFormData,
+        [name]: value
+      }
+    }))
+  }
+
+  render() {
+    const { handleLogin, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, deleteAnimal, mountEditForm } = this
+    const { authFormData, animals, animalForm, currentUser } = this.state
+    return (
+      <>
+        <Header />
+
+        {/* =================Routes================= */}
+        <Switch>
+          <Route
+            exact
+            path='/login'
+            render={() => (
+              <Login
+                handleLogin={handleLogin}
+                handleChange={authHandleChange}
+                formData={authFormData} />
+            )}
+          />
+
+          <Route
+            exact
+            path='/register'
+            render={() => (
+              <Register
+                handleRegister={handleRegister}
+                handleChange={authHandleChange}
+                formData={authFormData}
+              />)}
+          />
+
+          <Route
+            exact
+            path='/animals'
+            render={(props) =>
+              <Animals
+                {...props}
+                currentUser={currentUser}
+                animals={animals}
+                animalForm={animalForm}
+                handleFormChange={handleFormChange}
+                newAnimal={newAnimal}
+              />
+            }
+          />
+
+          <Route
+            exact
+            path='/animals/create'
+            render={() => (
+              <CreateAnimal
+                handleFormChange={handleFormChange}
+                animalForm={animalForm}
+                newAnimal={newAnimal}
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path='/animals/:id'
+            render={(props) => {
+              const { id } = props.match.params
+              const animal = this.state.animals.find(item => item.id === parseInt(id))
+              return <AnimalDetails
+                id={id}
+                animal={animal}
+                handleFormChange={handleFormChange}
+                mountEditForm={mountEditForm}
+                updateAnimal={updateAnimal}
+                animalForm={animalForm}
+                deleteAnimal={deleteAnimal}
+              />
+            }}
+          />
+
+
+          <Route
+            path='/'
+            component={Home}
+          />
+        </Switch>
+      </>
+    )
+  }
+}
 
 
 

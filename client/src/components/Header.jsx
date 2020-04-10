@@ -29,7 +29,7 @@ function SimpleMenu() {
           <Link to='/register' className='center sign-up'>
             <h3>Sign Up</h3>
           </Link>
-          <Link to='login' className='center log-in'>
+          <Link to='/login' className='center log-in'>
             <h3>Log In</h3>
           </Link>
         </div>

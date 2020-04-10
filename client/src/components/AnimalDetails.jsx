@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import EditAnimal from '../components/EditAnimal'
+
 
 class AnimalDetails extends Component {
   constructor(props) {
@@ -23,18 +24,17 @@ class AnimalDetails extends Component {
     const { isEdit } = this.state
     return (
       <div>
-        {animal == undefined ? <h2>Loading</h2> : (
+        {animal === undefined ? <h2>Loading</h2> : (
           <div>
             <img alt={animal.name} src={animal.image_url} />
             {isEdit ?
-              <Route
-                path={'/animals/:id/edit'} render={() => (
+              <Route path={'/animals/:id/edit'} render={() => (
                   <EditAnimal
                     handleFormChange={handleFormChange}
                     handleSubmit={(e) => {
                       e.preventDefault()
                       updateAnimal()
-                      this.setState({ isEdit: false })
+                      // this.setState({ isEdit: false })
                       this.props.history.push(`animals/${animalForm.id}`)
                     }}
                     animalForm={animalForm} />
@@ -43,7 +43,7 @@ class AnimalDetails extends Component {
               <>
                 <h1>{animal.name}</h1>
                 <button onClick={() => {
-                  this.setState({ isEdit: true })
+                  // this.setState({ isEdit: true })
                   this.props.history.push(`/animals/${animal.id}/edit`)
                 }}>Edit</button>
                 <button
@@ -61,5 +61,4 @@ class AnimalDetails extends Component {
 }
 
 
-
-export default AnimalDetails
+export default withRouter(AnimalDetails)

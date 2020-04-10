@@ -106,7 +106,7 @@ function CreateAnimal(props) {
         <input
           type='text'
           name='good_with_dogs'
-          value={animalForm.good_with_dogs}
+          value={animalForm.good_with_dogs || ''}
           onChange={handleFormChange}
           placeholder='Good with dogs'
         />

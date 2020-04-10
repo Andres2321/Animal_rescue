@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :update, :destroy, :create]
+  before_action :set_animal, only: [:show, :update, :destroy]
   before_action :authorize_request, except: [:index, :show]
 
   # GET /animals
@@ -16,7 +16,7 @@ class AnimalsController < ApplicationController
 
   # POST /animals
   def create
-    @animals = Animal.new(animal_params)
+    @animal = Animal.new(animal_params)
 
     if @animal.save
       render json: @animal, status: :created, location: @animal
@@ -47,6 +47,6 @@ class AnimalsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def animal_params
-      params.require(:animal).permit(:species, :name, :breed, :age, :gender, :size, :color, :image_url, :spayed_neutered, :declawed, :housetrained, :description, :good_with_animals, :good_with_cats, :good_with_kids, :location_name, :location_address, :intake_date, :adoption_price)
+      params.require(:animal).permit(:species, :name, :breed, :age, :gender, :size, :color, :image_url, :spayed_neutered, :declawed, :housetrained, :description, :good_with_dogs, :good_with_cats, :good_with_kids, :location_name, :location_address, :intake_date, :adoption_price)
     end
 end
