@@ -20,43 +20,56 @@ class AnimalDetails extends Component {
 
 
   render() {
-    const { animal, handleFormChange, updateAnimal, animalForm, deleteAnimal } = this.props
+    const { animal, handleFormChange, updateAnimal, animalForm, deleteAnimal, currentUser } = this.props
     const { isEdit } = this.state
     return (
       <div>
         {animal === undefined ? <h2>Loading</h2> : (
           <div>
             <img alt={animal.name} src={animal.image_url} />
-            {isEdit ?
-              <Route
-                exact
-                path={'/animals/:id/edit'}
-                render={() => (
-                  <EditAnimal
-                    handleFormChange={handleFormChange}
-                    handleSubmit={(e) => {
-                      e.preventDefault()
-                      updateAnimal()
-                      this.setState({ isEdit: false })
-                      this.props.history.push(`animals/${animalForm.id}`)
-                    }}
-                    animalForm={animalForm} />
-                )} />
+            {currentUser.is_admin ?
+              // If is_admin true
+              <>
+                {isEdit ?
+                  //  if isEdit true
+                  <Route
+                    exact
+                    path={'/animals/:id/edit'}
+                    render={() => (
+                      <EditAnimal
+                        handleFormChange={handleFormChange}
+                        handleSubmit={(e) => {
+                          e.preventDefault()
+                          updateAnimal()
+                          this.setState({ isEdit: false })
+                          this.props.history.push(`animals/${animalForm.id}`)
+                        }}
+                        animalForm={animalForm} />
+                    )} />
+
+                  :
+                  // If isEdit is false
+                  <>
+                    <h1>{animal.name}</h1>
+                    <button onClick={() => {
+                      this.setState({ isEdit: true })
+                      this.props.history.push(`/animals/${animal.id}/edit`)
+                    }}>Edit</button>
+                    <button
+                      onClick={() => {
+                        deleteAnimal(animal.id)
+                        this.props.history.push('/animals')
+                      }}>Delete</button>
+                  </>
+                }
+              </>
+              // If is_admin is false
               :
               <>
-                <h1>{animal.name}</h1>
-                <button onClick={() => {
-                  this.setState({ isEdit: true })
-                  this.props.history.push(`/animals/${animal.id}/edit`)
-                }}>Edit</button>
-                <button
-                  onClick={() => {
-                    deleteAnimal(animal.id)
-                    this.props.history.push('/animals')
-                  }}>Delete</button>
+                hello
               </>
             }
-        </div>
+          </div>
         )}
       </div>
     )

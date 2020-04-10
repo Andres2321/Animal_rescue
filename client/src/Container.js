@@ -199,8 +199,8 @@ class Container extends Component {
     return (
       <>
         <Header
-        currentUser={currentUser}
-        handleLogout={handleLogout}
+          currentUser={currentUser}
+          handleLogout={handleLogout}
         />
 
         {/* =================Routes================= */}
@@ -208,7 +208,7 @@ class Container extends Component {
           <Route
             exact
             path='/login'
-            render={(props) => 
+            render={(props) =>
               <Login
                 {...props}
                 currentUser={currentUser}
@@ -264,6 +264,7 @@ class Container extends Component {
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <AnimalDetails
                 id={id}
+                currentUser={currentUser}
                 animal={animal}
                 handleFormChange={handleFormChange}
                 mountEditForm={mountEditForm}
