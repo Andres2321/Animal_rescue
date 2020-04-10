@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const api = axios.create({
-  baseURL: Process.env.NODE_ENV === 'production' ? 'https://animal-rescue-001.herokuapp.com/' : 'http://localhost:3000'
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://animal-rescue-001.herokuapp.com/' : 'http://localhost:3000'
 });
 
 // =====================Auth========================
