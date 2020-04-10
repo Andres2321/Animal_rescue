@@ -11,13 +11,13 @@ I wanted to make a mock website for my local animal shelter. As a guest visiting
 - At least 3 models in backend
 - Backend association (One-to-many)
 - Full CRUD (Animal entries, events, applications, appointments)
-- Sort/filter for pets
 - Media queries for mobile
 - Frontend deployment on Surge
 - Backend deployment on Heroku
 
 # Post MVP
 
+- Sort/filter for pets
 - Volunteer applications
 - Adoption applications
 - Animal Carousel display
