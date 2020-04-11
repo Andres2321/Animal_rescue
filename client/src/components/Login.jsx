@@ -12,12 +12,6 @@ const Login = (props) => {
         <input name="email" type="text" placeholder='Email' value={formData.email} onChange={handleChange} className='input-style'/>
         <input name="password" type="password" placeholder='Password' value={formData.password} onChange={handleChange}  />
         <button
-          onClick={() => {
-            {
-              if (currentUser) {
-                props.history.push('/')
-            }}
-        }}
         >Login</button>
         <Link to='/register'>Register</Link>
       </form>

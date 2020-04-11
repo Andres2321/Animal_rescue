@@ -68,3 +68,4 @@ export const deleteAnimal = async (id) => {
   const response = await api.delete(`/animals/${id}`)
   return response.data
 }
+

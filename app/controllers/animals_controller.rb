@@ -6,12 +6,12 @@ class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
 
-    render json: @animals
+    render json: @animals, include: :likes
   end
 
   # GET /animals/1
   def show
-    render json: @animal
+    render json: @animal, include: :likes
   end
 
   # POST /animals

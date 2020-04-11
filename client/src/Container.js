@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
 import Register from './components/Register'
@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Animals from './components/Animals'
 import CreateAnimal from './components/CreateAnimal'
 import AnimalDetails from './components/AnimalDetails'
+import EditAnimal from './components/EditAnimal'
 
 import {
   loginUser,
@@ -46,7 +47,11 @@ class Container extends Component {
         location_name: '',
         location_address: '',
         intake_date: '',
-        adoption_price: null
+        adoption_price: null,
+          likes: {
+            likes: null,
+            comments: ''
+          }
       },
       authFormData: {
         username: "",
@@ -116,7 +121,8 @@ class Container extends Component {
   }
 
   // Update an animal
-  updateAnimal = async () => {
+  updateAnimal = async (e) => {
+    e.preventDefault()
     const { animalForm } = this.state
     const editAnimal = await updateAnimal(animalForm.id, animalForm)
     this.setState(prevState => (
@@ -165,6 +171,7 @@ class Container extends Component {
     this.setState({
       currentUser
     })
+    this.props.history.push('/')
   }
 
   handleRegister = async (e) => {
@@ -263,23 +270,34 @@ class Container extends Component {
               const { id } = props.match.params
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <AnimalDetails
-                id={id}
                 currentUser={currentUser}
                 animal={animal}
-                handleFormChange={handleFormChange}
-                mountEditForm={mountEditForm}
-                updateAnimal={updateAnimal}
-                animalForm={animalForm}
-                deleteAnimal={deleteAnimal}
               />
             }}
           />
 
-
           <Route
+            exact
+            path='/animals/:id/edit'
+            render={(props) => {
+              const { id} = props.match.params
+              const animal = this.state.animals.find(item => item.id === parseInt(id))
+              return <EditAnimal
+                {...props}
+                currentUser={currentUser}
+                id={id}
+                animal={animal}
+                mountEditForm={mountEditForm}
+                handleFormChange={handleFormChange}
+                updateAnimal={updateAnimal}
+                animalForm={animalForm}
+              />
+            }}
+          />
+            <Route
             path='/'
             component={Home}
-          />
+            />
         </Switch>
       </>
     )
@@ -288,4 +306,4 @@ class Container extends Component {
 
 
 
-export default Container 
+export default withRouter(Container) 

@@ -6,7 +6,7 @@ function CreateAnimal(props) {
 
     <div>
       Create Animal
-      <form className='flex column' onSubmit={newAnimal}>
+      <form className='flex column ' onSubmit={newAnimal}>
         <input
           type='text'
           name='species'
