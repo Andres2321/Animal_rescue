@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
   
+  post '/likes', to: 'likes#create'
   resources :animals
   resources :users
+
 end

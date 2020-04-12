@@ -3,6 +3,7 @@ import Container from './Container'
 import './Styles/header.css'
 import './Styles/Home.css'
 import './Styles/login.css'
+import './Styles/Reset.css'
 
 
 function App() {

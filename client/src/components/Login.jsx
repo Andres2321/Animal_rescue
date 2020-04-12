@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 const Login = (props) => {
-  const { handleLogin, formData, handleChange, currentUser } = props
+  const { handleLogin, formData, handleChange} = props
   return (
     <div className="form-container">
       <form onSubmit={handleLogin} className='form-container flex column'>

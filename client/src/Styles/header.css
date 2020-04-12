@@ -1,53 +1,6 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-
-/* ==========Header Style=========== */
 .top-header-div{
   justify-content: space-between;
-  background-color: #E0E8EE;
+  color: white;
 }
 
 .flex{
@@ -66,30 +19,82 @@ table {
   align-self: center;
 }
 
-.dropdown-content{
-  display: none;
-}
-
-.dropdown-container:hover .dropdown-content{
-  display: flex;
-  flex-direction: column;
-}
-
-.looking-glass{
-  height: 4vh;
-  margin: 1em;
-}
-
 .header-title{
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  margin: 1em;
+  color: rgb(255, 255, 255);
+  margin: 2em;
 }
 
-.sign-up{
+.sign-up, .log-in{
 margin: 1em;
+color: rgb(255, 255, 255);
+text-decoration: none;
 }
 
-.log-in{
-margin: 1em;
+.logout{
+margin: auto 1em;
+}
+
+ul{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-nav ul {
+background: rgba(5, 1, 230, 0);
+-webkit-transition: .5s;
+transition: .5s;
+margin: 0 auto;
+}
+
+.main-nav li {
+position: relative;
+width: 150px;
+list-style: none;
+-webkit-transition: .5s;
+transition: .5s;
+}
+
+.main-nav > ul > li > a, h1 {
+text-transform: uppercase;
+}
+
+.main-nav a {
+display: block;
+text-decoration: none;
+padding: 5px 15px;
+color: rgb(0, 0, 0);
+}
+
+.main-nav ul ul {
+position: absolute;
+left: 0;
+top: 100%;
+visibility: hidden;
+opacity: 0;
+
+}
+
+.main-nav ul ul ul {
+left: 100%;
+top: 0;
+}
+
+.main-nav li:hover li {
+background: rgba(0, 16, 163, 0);
+}
+
+.main-nav li li:hover, .main-nav li li:hover li {
+text-decoration: underline;
+}
+
+.main-nav li li li:hover {
+background: rgba(1, 4, 206, 0);
+}
+
+.main-nav li:hover > ul {
+visibility: visible;
+opacity: 1;
 }

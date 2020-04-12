@@ -3,7 +3,6 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
 import Register from './components/Register'
-import Header from './components/Header'
 import Animals from './components/Animals'
 import CreateAnimal from './components/CreateAnimal'
 import AnimalDetails from './components/AnimalDetails'
@@ -19,6 +18,7 @@ import {
   createAnimal,
   updateAnimal,
   deleteAnimal,
+  createLikeComment
 } from './services/api-helper'
 
 class Container extends Component {
@@ -48,10 +48,9 @@ class Container extends Component {
         location_address: '',
         intake_date: '',
         adoption_price: null,
-          likes: {
-            likes: null,
-            comments: ''
-          }
+      },
+      likes: {
+        comments: ''
       },
       authFormData: {
         username: "",
@@ -134,8 +133,10 @@ class Container extends Component {
         })
       }
     ))
+    this.props.history.push(`/animals/${animalForm.id}`)
   }
 
+  // update animal form
   mountEditForm = async (id) => {
     const animals = await showAnimals()
     const animal = animals.find(item => item.id === parseInt(id))
@@ -163,8 +164,23 @@ class Container extends Component {
     }))
   }
 
-  // ===============Auth=====================
+  // Create likes and comments
+  createLikesAndComments = async (id) => {
+    const likeAndComment = await createLikeComment({ ...this.state.likes, user_id: this.state.currentUser.id, animal_id: id })
+  }
 
+  // Will store form inputs in state
+  handleLikeFormChange = (e) => {
+    const { name, value } = e.target
+    this.setState(prevState => ({
+      likes: {
+        ...prevState.likes,
+        [name]: value
+      }
+    }))
+  }
+
+  // ===============Auth=====================
   handleLogin = async (e) => {
     e.preventDefault()
     const currentUser = await loginUser(this.state.authFormData)
@@ -201,15 +217,10 @@ class Container extends Component {
   }
 
   render() {
-    const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, deleteAnimal, mountEditForm } = this
-    const { authFormData, animals, animalForm, currentUser } = this.state
+    const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, mountEditForm, createLikesAndComments, handleLikeFormChange } = this
+    const { authFormData, animals, animalForm, currentUser, likes } = this.state
     return (
       <>
-        <Header
-          currentUser={currentUser}
-          handleLogout={handleLogout}
-        />
-
         {/* =================Routes================= */}
         <Switch>
           <Route
@@ -270,6 +281,10 @@ class Container extends Component {
               const { id } = props.match.params
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <AnimalDetails
+                likes={likes}
+                handleLikeFormChange={handleLikeFormChange}
+                createLikesAndComments={createLikesAndComments}
+                handleFormChange={handleFormChange}
                 currentUser={currentUser}
                 animal={animal}
               />
@@ -280,7 +295,7 @@ class Container extends Component {
             exact
             path='/animals/:id/edit'
             render={(props) => {
-              const { id} = props.match.params
+              const { id } = props.match.params
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <EditAnimal
                 {...props}
@@ -294,10 +309,15 @@ class Container extends Component {
               />
             }}
           />
-            <Route
+          <Route
             path='/'
-            component={Home}
-            />
+            render={() => (
+              <Home
+                currentUser={currentUser}
+                handleLogout={handleLogout}
+                animals={animals}
+              />)}
+          />
         </Switch>
       </>
     )

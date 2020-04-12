@@ -69,3 +69,9 @@ export const deleteAnimal = async (id) => {
   return response.data
 }
 
+// =====================Create Like and comment==============
+export const createLikeComment = async (data) => {
+  const response = await api.post('/likes', { like: data})
+  return response.data
+}
+
