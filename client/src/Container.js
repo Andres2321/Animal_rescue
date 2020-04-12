@@ -7,6 +7,7 @@ import Animals from './components/Animals'
 import CreateAnimal from './components/CreateAnimal'
 import AnimalDetails from './components/AnimalDetails'
 import EditAnimal from './components/EditAnimal'
+import Header from './components/Header'
 
 import {
   loginUser,

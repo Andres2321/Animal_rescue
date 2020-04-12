@@ -1,4 +1,7 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&family=Cormorant+Upright:wght@700&display=swap');
+
+body, html{
   margin: 0;
+  font-family: 'Baloo Tamma 2', cursive;
   padding: 0;
 }

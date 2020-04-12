@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&family=Cormorant+Upright:wght@700&display=swap');
+
 .top-header-div{
   justify-content: space-between;
   color: white;
@@ -44,8 +46,6 @@ ul{
 
 .main-nav ul {
 background: rgba(5, 1, 230, 0);
--webkit-transition: .5s;
-transition: .5s;
 margin: 0 auto;
 }
 
@@ -53,8 +53,8 @@ margin: 0 auto;
 position: relative;
 width: 150px;
 list-style: none;
--webkit-transition: .5s;
-transition: .5s;
+-webkit-transition: .3s;
+transition: .3s;
 }
 
 .main-nav > ul > li > a, h1 {
@@ -73,8 +73,7 @@ position: absolute;
 left: 0;
 top: 100%;
 visibility: hidden;
-opacity: 0;
-
+background: #D3D4D6;
 }
 
 .main-nav ul ul ul {
@@ -83,7 +82,7 @@ top: 0;
 }
 
 .main-nav li:hover li {
-background: rgba(0, 16, 163, 0);
+background: #D3D4D6;
 }
 
 .main-nav li li:hover, .main-nav li li:hover li {
@@ -91,10 +90,9 @@ text-decoration: underline;
 }
 
 .main-nav li li li:hover {
-background: rgba(1, 4, 206, 0);
+background: #D3D4D6;
 }
 
 .main-nav li:hover > ul {
 visibility: visible;
-opacity: 1;
 }

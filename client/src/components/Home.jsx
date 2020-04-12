@@ -8,12 +8,13 @@ function Home(props) {
     <>
       <div className='home-container'>
         <div className='top-header-div row flex'>
-          <h1 className='center'>
-            <Link to='/' className='header-title'>
+          <h2 className='center'>
+            <Link to='/' className='header-title bounceInLeft'>
               The Broome County Humane Society
+              
             </Link>
-          </h1>
-          
+          </h2>
+
           {currentUser ?
             <>
               {/* If current user is true  */}
@@ -37,7 +38,7 @@ function Home(props) {
         </div>
       </div>
 
-      <nav className='main-nav'>
+      {/* <nav className='main-nav'>
         <ul className='flex row center'>
           <li>
             <Link href="">Adoptions</Link>
@@ -71,7 +72,7 @@ function Home(props) {
             </ul>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </>
   )
 

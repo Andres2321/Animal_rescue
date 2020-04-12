@@ -1,10 +1,12 @@
 import React from 'react'
+import Header from './Header'
 
 
 function Animals(props) {
   const { currentUser, animals} = props
   return (
     <div>
+      <Header />
       {animals.map(animal => (
         <div
           key={animal.id}

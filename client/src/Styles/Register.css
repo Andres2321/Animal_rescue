@@ -1,0 +1,59 @@
+.register-main-container{
+  height: 100vh;
+}
+
+.register-left-container{
+width: 40%;
+height: 100%;
+background-color: rgb(231, 231, 231);
+}
+
+.register-right-container{
+  justify-content: space-between;
+  width: 60%;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2015/03/26/09/43/dog-690176_1280.jpg);
+}
+
+.register-input-style{
+  width: 70%;
+  border: none;
+  border-bottom: solid rgb(0, 146, 12) 1px;
+  font-size: x-large;
+  display: block;
+  margin: 5% auto;
+  background-color: rgb(231, 231, 231);
+  outline: none;
+}
+
+.register-title{
+  margin: 20% 0;
+  text-align: center;
+  color: rgb(0, 146, 12);
+}
+
+.register-submit-button{
+  display: block;
+  margin: 15% auto;
+  text-align: center;
+  background-color: rgb(0, 146, 12);
+  color: rgb(231, 231, 231);
+  width: 40%;
+  height: 7%;
+  font-size: x-large;
+}
+
+.have-account-title{
+  color: rgb(231, 231, 231);
+  margin: 3% auto;
+  text-align: center;
+}
+
+.register-signin-redirect-button{
+  margin-bottom: 0;
+  height: 7%;
+  font-size: x-large;
+  background-color: rgb(0, 146, 12);
+  border: none;
+  color: rgb(231, 231, 231);
+}

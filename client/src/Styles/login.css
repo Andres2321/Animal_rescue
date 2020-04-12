@@ -1,14 +1,72 @@
-.form-container{
-  margin: 10vh auto;
-  width: 50vw;
-  height: 50vh;
+.login-container{
+  width: 100vw;
+  height: 100vh;
 }
 
-.form-container{
-  
+.left-container{
+  width: 70%;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2016/02/19/11/53/pug-1210025_1280.jpg);
+  justify-content: space-between;
+}
+
+.register-button{
+  margin-bottom: 0;
+  height: 7%;
+  font-size: x-large;
+  background-color: rgb(75, 1, 195);
+  border: none;
+  color: rgb(231, 231, 231);
+}
+
+.register-button:hover{
+  background-color: rgb(37, 17, 82);
+}
+
+.submit-button:hover{
+  background-color: rgb(37, 17, 82);
+}
+
+.account-title{
+  color: rgb(231, 231, 231);
+  margin: 3% auto;
+}
+
+.right-container{
+  width: 30%;
+  height: 100%;
+  justify-content: space-between;
+  background-color: rgb(231, 231, 231);
+}
+
+.sign-in-title{
+  color: rgb(75, 1, 195);
+  margin: 25% 0;
+  text-align: center;
 }
 
 .input-style{
-  width: 90;
-  height: 10%;
+  width: 70%;
+  border: none;
+  border-bottom: solid rgb(75, 1, 195) 1px;
+  font-size: x-large;
+  display: block;
+  margin: 5% auto;
+  background-color: rgb(231, 231, 231);
+  outline: none;
+}
+
+.input-container{
+  display: block;
+}
+
+.submit-button{
+  display: block;
+  margin: 20% auto;
+  text-align: center;
+  background-color: rgb(75, 1, 195);
+  color: rgb(231, 231, 231);
+  width: 40%;
+  height: 7%;
+  font-size: x-large;
 }
