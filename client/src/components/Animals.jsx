@@ -7,7 +7,7 @@ function Animals(props) {
   const animal = animals.map(animal => (
     <div
       onClick={() => { props.history.push(`/animals/${animal.id}`) }}
-      className='animal-card-container flex column hvr-grow-shadow'
+      className='animal-card-container flex column hvr-grow-shadow box-shadow'
       key={animal.id}
     >
       <div className='animal-image-container'>

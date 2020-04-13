@@ -6,8 +6,50 @@
 .edit-animal-form{
   width: 60vw;
   height: 100vh;
+  justify-content: space-between;
 }
 
 .edit-animal-left-container{
-  
+  width: 40vw;
+  height: 100vh;
+}
+
+.edit-animal-title{
+  text-align: center;
+  margin: 0;
+}
+
+.edit-animal-input-container{
+
+}
+
+.edit-animal-input{
+  border: none;
+  border-bottom: solid rgb(211, 190, 3) 1px;
+  font-size: medium;
+  display: block;
+  outline: none;
+  margin: .8% auto;
+  width: 40vw;
+}
+
+.edit-animal-submit-button{
+  display: block;
+  text-align: center;
+  background-color: rgb(211, 190, 3);
+  color: rgb(231, 231, 231);
+  width: 100%;
+  height: 4%;
+  margin-bottom: 0;
+  font-size: large;
+  border: none;
+  padding: 0;
+}
+
+#border-color{
+  border: 1px solid rgb(211, 190, 3);
+}
+
+.edit-animal-submit-button:hover{
+  background-color: rgb(182, 164, 3);
 }

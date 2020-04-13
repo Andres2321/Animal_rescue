@@ -7,6 +7,7 @@ import './Styles/Reset.css'
 import './Styles/Register.css'
 import './Styles/Animals.css'
 import './Styles/CreateAnimal.css'
+import './Styles/EditAnimals.css'
 
 
 function App() {

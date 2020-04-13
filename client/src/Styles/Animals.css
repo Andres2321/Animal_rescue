@@ -61,3 +61,7 @@ height: 30%;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.box-shadow{
+  box-shadow: 5px 10px;
+}
