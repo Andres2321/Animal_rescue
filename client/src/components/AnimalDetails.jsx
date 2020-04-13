@@ -17,8 +17,8 @@ function AnimalDetails(props) {
                   <p>Back to animals</p>
                 </Link>
                 {/* if admin is true */}
-                <img src={animal.image_url} alt='animal' />
                 <h1>{animal.name}</h1>
+                <img src={animal.image_url} alt='animal' className='animal-details-image1' />
                 <button onClick={() => {
                   props.history.push(`/animals/${animal.id}/edit`)
                 }}>Edit</button>
@@ -28,11 +28,17 @@ function AnimalDetails(props) {
                     props.history.push('/animals')
                   }}>Delete</button>
               </>
+
+
+              
+              
+              
+              
               :
               <>
                 {/* if admin is false */}
-                <img src={animal.image_url} alt='animal' />
                 <h1>{animal.name}</h1>
+                <img src={animal.image_url} alt='animal' className='animal-details-image'/>
                 <p>{animal.breed}</p>
                 <p>{animal.age}</p>
               </>

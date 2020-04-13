@@ -118,6 +118,7 @@ class Container extends Component {
         adoption_price: null
       }
     }))
+    this.props.history.push(`/animals/`)
   }
 
   // Update an animal
@@ -163,6 +164,7 @@ class Container extends Component {
     this.setState(prevState => ({
       animals: prevState.animals.filter(animal => animal.id !== id)
     }))
+    // this.props.history.push('/animals')
   }
 
   // Create likes and comments
@@ -197,6 +199,7 @@ class Container extends Component {
     this.setState({
       currentUser
     })
+    this.props.history.push('/')
   }
 
   handleLogout = () => {
@@ -283,6 +286,7 @@ class Container extends Component {
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <AnimalDetails
                 likes={likes}
+                deleteAnimal={deleteAnimal}
                 handleLikeFormChange={handleLikeFormChange}
                 createLikesAndComments={createLikesAndComments}
                 handleFormChange={handleFormChange}

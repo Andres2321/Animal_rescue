@@ -1,3 +1,7 @@
+.home-icon-register{
+margin: 2%;
+}
+
 .register-main-container{
   height: 100vh;
 }
@@ -56,4 +60,9 @@ background-color: rgb(231, 231, 231);
   background-color: rgb(0, 146, 12);
   border: none;
   color: rgb(231, 231, 231);
+}
+
+.register-signin-redirect-button:hover, .register-submit-button:hover{
+  background-color: rgb(0, 90, 8);
+  cursor: pointer;
 }

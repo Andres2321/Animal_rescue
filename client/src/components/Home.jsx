@@ -38,7 +38,7 @@ function Home(props) {
         </div>
       </div>
 
-      {/* <nav className='main-nav'>
+      <nav className='main-nav'>
         <ul className='flex row center'>
           <li>
             <Link href="">Adoptions</Link>
@@ -72,7 +72,7 @@ function Home(props) {
             </ul>
           </li>
         </ul>
-      </nav> */}
+      </nav>
     </>
   )
 

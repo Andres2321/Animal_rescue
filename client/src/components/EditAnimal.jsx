@@ -12,9 +12,12 @@ class EditAnimal extends Component {
   render() {
     const { handleFormChange, updateAnimal, animalForm } = this.props
     return (
-      <div>
-        Update Animal
-        <form className='flex column ' onSubmit={updateAnimal}>
+      <div className='edit-animals-container'>
+        <form className='flex column ' onSubmit={updateAnimal} className='edit-animal-form'>
+          <div className='edit-animal-left-container'>
+          
+          </div>
+
           <input
             type='text'
             name='species'
@@ -166,9 +169,7 @@ class EditAnimal extends Component {
             onChange={handleFormChange}
             placeholder='Price'
           />
-
           <button>Submit</button>
-
         </form>
       </div>
     )

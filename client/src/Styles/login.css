@@ -1,3 +1,7 @@
+.home-icon-login{
+margin: 2% 90%;
+}
+
 .login-container{
   width: 100vw;
   height: 100vh;
@@ -19,12 +23,10 @@
   color: rgb(231, 231, 231);
 }
 
-.register-button:hover{
+.register-button:hover, .submit-button:hover{
   background-color: rgb(37, 17, 82);
-}
+  cursor: pointer;
 
-.submit-button:hover{
-  background-color: rgb(37, 17, 82);
 }
 
 .account-title{

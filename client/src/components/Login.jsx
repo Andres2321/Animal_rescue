@@ -1,5 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import HomeIcon from '@material-ui/icons/Home';
+import { purple } from '@material-ui/core/colors';
 
 const Login = (props) => {
   const { handleLogin, formData, handleChange } = props
@@ -12,6 +14,11 @@ const Login = (props) => {
       </div>
 
       <form onSubmit={handleLogin} className='right-container'>
+        <HomeIcon
+          className='home-icon-login'
+          fontSize="large"
+          onClick={() => { props.history.push('/') }}
+          style={{ color: purple[800] }} />
         <h1 className='sign-in-title'>SIGN IN</h1>
         <div className='input-container'>
           <input name="email" type="text" placeholder='Email' value={formData.email} onChange={handleChange} className='input-style' />

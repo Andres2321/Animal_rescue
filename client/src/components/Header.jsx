@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Header(props) {
-  const { currentUser, handleLogout, animals } = props
+  const { currentUser, handleLogout } = props
   return (
     <div>
         <div>

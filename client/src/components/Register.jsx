@@ -1,5 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import HomeIcon from '@material-ui/icons/Home';
+import { green } from '@material-ui/core/colors';
 
 
 function Register(props) {
@@ -8,6 +10,11 @@ function Register(props) {
     <div className='register-main-container flex row'>
 
       <form onSubmit={handleRegister} className='register-left-container'>
+        <HomeIcon
+          className='home-icon-register'
+          fontSize="large"
+          onClick={() => { props.history.push('/') }}
+          style={{ color: green[500] }}/>
         <h1 className='register-title' >Register</h1>
         <div className='register-input-container'>
           <input className='register-input-style' name='username' type='text' placeholder='Username' value={formData.username} onChange={handleChange} />
