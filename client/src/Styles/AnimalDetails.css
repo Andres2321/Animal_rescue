@@ -78,8 +78,8 @@ hr{
 .animal-detail-second-container-subcontainer-three{
   width: 30vw;
   border: 1px solid black;
-  margin: 14.3% auto;
-  height: 30vh;
+  margin: 0 auto;
+  height: 51.3vh;
 }
 
 .animial-details-delete-button{
@@ -90,4 +90,16 @@ hr{
   background-color: rgb(255, 167, 4);
   border: none;
   color: rgb(0, 0, 0);
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.subtitle-margin {
+  margin: 0 4%;
+}
+
+.answer-margin {
+  margin: 0 8%;
 }

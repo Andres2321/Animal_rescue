@@ -40,19 +40,25 @@ function AnimalDetails(props) {
                 </div>
                 <div className='animal-detail-second-container'>
                   <div className='animal-detail-second-container-subcontainer-one flex column'>
-                    <h2>about</h2>
-                    <h3>House-trained</h3>
-                    <p>{animal.housetrained}</p>
-                    <h3>Good with kids?</h3>
-                    <p>{animal.good_with_kids}</p>
-                    <h3>Good with other dogs?</h3>
-                    <p>{animal.good_with_dogs}</p>
-                    <h3>Good with other cats?</h3>
-                    <p>{animal.good_with_cats}</p>
-                    <h3>Adoption price</h3>
-                    <p>{animal.adoption_price}</p>
-                    <h2>Meet {animal.name}</h2>
-                    <p>{animal.description}</p>
+                    <div>
+                      <h2 className='center-name'>about</h2>
+                      <hr />
+                      <h3 className='subtitle-margin'>House-trained</h3>
+                      <p className='answer-margin'>{animal.housetrained}</p>
+                      <h3 className='subtitle-margin'>Good with kids?</h3>
+                      <p className='answer-margin'>{animal.good_with_kids}</p>
+                      <h3 className='subtitle-margin'>Good with other dogs?</h3>
+                      <p className='answer-margin'>{animal.good_with_dogs}</p>
+                      <h3 className='subtitle-margin'>Good with other cats?</h3>
+                      <p className='answer-margin'>{animal.good_with_cats}</p>
+                      <h3 className='subtitle-margin'>Adoption price</h3>
+                      <p className='answer-margin'>${animal.adoption_price}</p>
+                    </div>
+                    <div>
+                      <h2 className='center-name'>Meet {animal.name}</h2>
+                      <hr />
+                      <p className='answer-margin'>{animal.description}</p>
+                    </div>
                   </div>
                 </div>
                 <div className='animal-detail-third-container flex column'>
@@ -64,6 +70,7 @@ function AnimalDetails(props) {
                       createLikesAndComments(animal.id)
                     }}
                     >
+                      <h2 className='center-name'>Leave {animal.name} a comment!</h2>
                       <input
                         type='text'
                         name='comments'
