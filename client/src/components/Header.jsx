@@ -5,12 +5,10 @@ function Header(props) {
   const { currentUser, handleLogout } = props
   return (
     <div>
-        <div>
         <div className='top-header-div row flex'>
           <h2 className='center'>
-            <Link to='/' className='header-title bounceInLeft'>
+            <Link to='/' className='header-title'>
               The Broome County Humane Society
-              
             </Link>
           </h2>
 
@@ -33,8 +31,8 @@ function Header(props) {
                 </Link>
               </div>
             </>}
-          
-        </div>
+      </div>
+      
           <nav className='main-nav'>
             <ul className='flex row center'>
               <li>
@@ -70,7 +68,6 @@ function Header(props) {
               </li>
             </ul>
           </nav>
-      </div>
     </div>
   )
 }

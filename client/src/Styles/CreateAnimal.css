@@ -118,3 +118,7 @@ height: 30%;
 .create-animal-submit-button:hover{
   background-color: rgb(1, 9, 134);
 }
+
+.preview-data{
+  margin: 2% 5%;
+}

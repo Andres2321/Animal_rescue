@@ -1,12 +1,38 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import Animals from './Animals'
 
 
 function AnimalDetails(props) {
-  const { animal, deleteAnimal, currentUser, createLikesAndComments, handleLikeFormChange, likes } = props
+  const { animal, deleteAnimal, currentUser, createLikesAndComments, handleLikeFormChange, likes, handleLogout } = props
   return (
     <>
+      <div className=''>
+        <div className='top-header-div row flex'>
+          <h2 className='center'>
+            <Link to='/' className='header-title'>
+              The Broome County Humane Society
+            </Link>
+          </h2>
+          {currentUser ?
+            <>
+              <h3 onClick={handleLogout} className='logout'>
+                Log Out
+              </h3>
+            </>
+            :
+            <>
+              <div className='flex row'>
+                <Link to='/register' className='center sign-up'>
+                  <h3>Sign Up</h3>
+                </Link>
+                <Link to='/login' className='center log-in'>
+                  <h3>Log In</h3>
+                </Link>
+              </div>
+            </>}
+        </div>
+      </div>
+
       {animal === undefined ?
         <h2>loading</h2>
         :
@@ -90,8 +116,8 @@ function AnimalDetails(props) {
                       <button className='comment-submit-button'>Submit</button>
                     </form>
                     <div className='comments-container '>
-                      {animal.likes.map(comment => (
-                        <div className='speech-bubble'>
+                      {animal.likes && animal.likes.map(comment => (
+                        <div key={comment.id} className='speech-bubble'>
                           <p>{comment.comments}</p>
                         </div>
                       ))}

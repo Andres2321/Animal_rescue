@@ -2,7 +2,9 @@
 
 .top-header-div{
   justify-content: space-between;
-  color: white;
+  color: rgb(255, 255, 255);
+  height: 5vh;
+  background-color: rgb(51, 51, 51);
 }
 
 .flex{
@@ -45,20 +47,23 @@ ul{
 }
 
 .main-nav ul {
-background: rgba(5, 1, 230, 0);
-margin: 0 auto;
+background-color: rgb(51, 51, 51);
+margin: 0;
+color: rgb(255, 255, 255);
+justify-content: space-evenly;
 }
 
 .main-nav li {
 position: relative;
 width: 150px;
 list-style: none;
--webkit-transition: .3s;
-transition: .3s;
+-webkit-transition: .1s;
+transition: .1s;
 }
 
 .main-nav > ul > li > a, h1 {
 text-transform: uppercase;
+color: rgb(255, 255, 255);
 }
 
 .main-nav a {
@@ -66,12 +71,14 @@ display: block;
 text-decoration: none;
 padding: 5px 15px;
 color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+
 }
 
 .main-nav ul ul {
 position: absolute;
 left: 0;
-top: 100%;
+top: 100%; 
 visibility: hidden;
 background: #D3D4D6;
 }

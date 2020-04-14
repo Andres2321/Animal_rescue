@@ -7,7 +7,8 @@ import Animals from './components/Animals'
 import CreateAnimal from './components/CreateAnimal'
 import AnimalDetails from './components/AnimalDetails'
 import EditAnimal from './components/EditAnimal'
-import Header from './components/Header'
+import Footer from './components/Footer'
+
 
 import {
   loginUser,
@@ -258,6 +259,7 @@ class Container extends Component {
             render={(props) =>
               <Animals
                 {...props}
+                handleLogout={handleLogout}
                 currentUser={currentUser}
                 animals={animals}
                 animalForm={animalForm}
@@ -272,6 +274,8 @@ class Container extends Component {
             path='/animals/create'
             render={() => (
               <CreateAnimal
+                handleLogout={handleLogout}
+                currentUser={currentUser}
                 handleFormChange={handleFormChange}
                 animalForm={animalForm}
                 newAnimal={newAnimal}
@@ -286,6 +290,7 @@ class Container extends Component {
               const { id } = props.match.params
               const animal = this.state.animals.find(item => item.id === parseInt(id))
               return <AnimalDetails
+                handleLogout={handleLogout}
                 likes={likes}
                 deleteAnimal={deleteAnimal}
                 handleLikeFormChange={handleLikeFormChange}
@@ -308,6 +313,7 @@ class Container extends Component {
                 currentUser={currentUser}
                 id={id}
                 animal={animal}
+                handleLogout={handleLogout}
                 mountEditForm={mountEditForm}
                 handleFormChange={handleFormChange}
                 updateAnimal={updateAnimal}
@@ -325,11 +331,10 @@ class Container extends Component {
               />)}
           />
         </Switch>
+        <Footer />
       </>
     )
   }
 }
-
-
 
 export default withRouter(Container) 
