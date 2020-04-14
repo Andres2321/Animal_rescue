@@ -8,6 +8,7 @@ import './Styles/Register.css'
 import './Styles/Animals.css'
 import './Styles/CreateAnimal.css'
 import './Styles/EditAnimals.css'
+import './Styles/AnimalDetails.css'
 
 
 function App() {

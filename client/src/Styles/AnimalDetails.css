@@ -1,5 +1,62 @@
-.animal-details-image{
-  width: 20%;
-  height: 10%;
+.animal-details-main-container{
+width: 100vw;
+height: 100vh;
+border: 1px black solid;
+margin: 0;
 }
 
+.animal-details-first-container{
+width: 30vw;
+justify-content: space-between;
+}
+
+
+.animal-detail-second-container{
+  width: 35vw;
+}
+
+.animal-detail-third-container{
+  width: 35vw;
+  
+}
+.animal-details-image-container{
+  width: 25vw;
+  height: 40vh;
+  border: 1px black solid;
+  margin: 0 auto;
+  object-fit: scale-down;
+  text-align: center;
+  overflow: hidden;
+} 
+
+.animal-details-image{
+  height: 40vh;
+}
+
+.center-name{
+  text-align: center;
+  margin: auto;
+}
+
+.animial-details-edit-button{
+  width: 83vh;
+  margin-bottom: 0;
+  height: 7%;
+  font-size: x-large;
+  background-color: rgb(255, 251, 0);
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+.animal-details-first-information{
+  width: 25vw;
+  height: 30vh;
+  border: 1px solid black;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+hr{
+  border: .5px solid rgb(168, 168, 168);
+  width: 90%;
+}

@@ -14,7 +14,7 @@ class EditAnimal extends Component {
     return (
 
       <div className='edit-animals-container flex row'>
-        <div className=' flex column created-animal-card-container' >
+        <div className=' flex column created-animal-card-container'>
           {/* <h2 className='preview-title'>Preview</h2> */}
           <div className='flex column preview-container hvr-float-shadow' id='border-color'>
             <div className='preview-image-container'>

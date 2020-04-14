@@ -164,7 +164,8 @@ class Container extends Component {
     this.setState(prevState => ({
       animals: prevState.animals.filter(animal => animal.id !== id)
     }))
-    // this.props.history.push('/animals')
+    console.log('push')
+    this.props.history.push('/animals')
   }
 
   // Create likes and comments
@@ -221,7 +222,7 @@ class Container extends Component {
   }
 
   render() {
-    const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, mountEditForm, createLikesAndComments, handleLikeFormChange } = this
+    const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, mountEditForm, createLikesAndComments, handleLikeFormChange, deleteAnimal } = this
     const { authFormData, animals, animalForm, currentUser, likes } = this.state
     return (
       <>

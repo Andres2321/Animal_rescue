@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 function Home(props) {
-  const { currentUser, handleLogout, animals } = props
+  const { currentUser, handleLogout } = props
   return (
     <>
       <div className='home-container'>
@@ -36,7 +36,6 @@ function Home(props) {
             </>}
           
         </div>
-      </div>
 
       <nav className='main-nav'>
         <ul className='flex row center'>
@@ -72,7 +71,8 @@ function Home(props) {
             </ul>
           </li>
         </ul>
-      </nav>
+        </nav>
+      </div>
     </>
   )
 

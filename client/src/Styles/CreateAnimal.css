@@ -51,11 +51,9 @@ height: 100vh;
   width: 30vw;
   height: 70vh;
   margin: 25% auto;
-  /* border: .9px solid rgb(0, 0, 0); */
   background-color: rgb(255, 255, 255);
--webkit-box-shadow: -1px 3px 223px -4px rgba(0,0,0,0.39);
--moz-box-shadow: -1px 3px 223px -4px rgba(0,0,0,0.39);
-box-shadow: -1px 3px 223px -4px rgba(0,0,0,0.39);
+  border: 2px solid rgb(1, 12, 175);
+  box-sizing: border-box;
 }
 
 .preview-image-container{
