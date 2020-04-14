@@ -17,12 +17,11 @@ justify-content: space-between;
 
 .animal-detail-third-container{
   width: 35vw;
-  
+  justify-content: space-between;
 }
 .animal-details-image-container{
   width: 25vw;
-  height: 40vh;
-  border: 1px black solid;
+  height: 50vh;
   margin: 0 auto;
   object-fit: scale-down;
   text-align: center;
@@ -30,7 +29,7 @@ justify-content: space-between;
 } 
 
 .animal-details-image{
-  height: 40vh;
+  height: 50vh;
 }
 
 .center-name{
@@ -39,7 +38,7 @@ justify-content: space-between;
 }
 
 .animial-details-edit-button{
-  width: 83vh;
+  width: 100%;
   margin-bottom: 0;
   height: 7%;
   font-size: x-large;
@@ -59,4 +58,36 @@ justify-content: space-between;
 hr{
   border: .5px solid rgb(168, 168, 168);
   width: 90%;
+}
+
+.animal-detail-second-container-subcontainer-one{
+  width: 30vw;
+  height: 82.2vh;
+  border: 1px solid black;
+  margin: 14.3% auto;
+}
+
+.animal-detail-second-container-subcontainer-two{
+  width: 30vw;
+  height: 20vh;
+  margin: 0 auto;
+  margin: 14.3% auto;
+  border: 1px solid black;
+}
+
+.animal-detail-second-container-subcontainer-three{
+  width: 30vw;
+  border: 1px solid black;
+  margin: 14.3% auto;
+  height: 30vh;
+}
+
+.animial-details-delete-button{
+  width: 100%;
+  margin-bottom: 0;
+  height: 7%;
+  font-size: x-large;
+  background-color: rgb(255, 167, 4);
+  border: none;
+  color: rgb(0, 0, 0);
 }
