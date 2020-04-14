@@ -3,6 +3,7 @@ width: 20vw;
 height: 50vh;
 margin: 3%;
 cursor: pointer;
+
 }
 
 .addition-card-container{
@@ -31,11 +32,13 @@ cursor: pointer;
 .animal-details{
 justify-content: space-between;
 height: 30%;
+background-color: rgb(255, 255, 255);
 }
 
 .animal-container{
   width: 90%;
-  height: 100vh;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;

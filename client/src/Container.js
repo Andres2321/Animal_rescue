@@ -170,7 +170,7 @@ class Container extends Component {
 
   // Create likes and comments
   createLikesAndComments = async (id) => {
-    const likeAndComment = await createLikeComment({ ...this.state.likes, user_id: this.state.currentUser.id, animal_id: id })
+    const comments = await createLikeComment({ ...this.state.likes, user_id: this.state.currentUser.id, animal_id: id })
   }
 
   // Will store form inputs in state

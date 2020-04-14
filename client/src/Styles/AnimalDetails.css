@@ -1,15 +1,14 @@
 .animal-details-main-container{
 width: 100vw;
 height: 100vh;
-border: 1px black solid;
 margin: 0;
 }
 
 .animal-details-first-container{
 width: 30vw;
 justify-content: space-between;
+background-color: rgb(248, 248, 248);
 }
-
 
 .animal-detail-second-container{
   width: 35vw;
@@ -18,9 +17,10 @@ justify-content: space-between;
 .animal-detail-third-container{
   width: 35vw;
   justify-content: space-between;
+  background-color: rgb(248, 248, 248);
 }
 .animal-details-image-container{
-  width: 25vw;
+  max-width: 25vw;
   height: 50vh;
   margin: 0 auto;
   object-fit: scale-down;
@@ -30,6 +30,7 @@ justify-content: space-between;
 
 .animal-details-image{
   height: 50vh;
+  border-radius: 2%;
 }
 
 .center-name{
@@ -50,9 +51,9 @@ justify-content: space-between;
 .animal-details-first-information{
   width: 25vw;
   height: 30vh;
-  border: 1px solid black;
   margin: 0 auto;
   justify-content: space-evenly;
+  background-color: rgb(255, 255, 255);
 }
 
 hr{
@@ -63,23 +64,25 @@ hr{
 .animal-detail-second-container-subcontainer-one{
   width: 30vw;
   height: 82.2vh;
-  border: 1px solid black;
   margin: 14.3% auto;
+  background-color: rgb(255, 255, 255);
 }
 
 .animal-detail-second-container-subcontainer-two{
   width: 30vw;
-  height: 20vh;
-  margin: 0 auto;
-  margin: 14.3% auto;
-  border: 1px solid black;
+  height: 25vh;
+  margin-top: 14.3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6.5%;
+  background-color: rgb(255, 255, 255);
 }
 
 .animal-detail-second-container-subcontainer-three{
   width: 30vw;
-  border: 1px solid black;
   margin: 0 auto;
   height: 51.3vh;
+  background-color: rgb(255, 255, 255);
 }
 
 .animial-details-delete-button{
@@ -102,4 +105,87 @@ hr{
 
 .answer-margin {
   margin: 0 8%;
+}
+
+.animal-details-box-shadow{
+  -webkit-box-shadow: 7px 15px 47px -30px rgba(0,0,0,1);
+  -moz-box-shadow: 7px 15px 47px -30px rgba(0,0,0,1);
+  box-shadow: 7px 15px 47px -30px rgba(0,0,0,1);
+}
+
+.border-radius{
+  border-radius: 2%;
+  border: 1px solid rgb(236, 236, 236);
+}
+
+.animal-details-input{
+  border: none;
+  display: block;
+  outline: none;
+  border-bottom: solid 1px rgb(255, 167, 4);
+  width: 25vw;
+  margin: 5% auto;
+  font-size: large;
+}
+
+.comment-submit-button{
+  border: none;
+  background-color: rgb(255, 167, 4);
+  width: 5vw;
+  height: 3vh;
+  color: rgb(255, 255, 255);
+  margin-left: 75.5%;
+}
+
+.comments-container{
+  margin: 3% auto;
+  width: 25vw;
+  height: 30vh;
+  overflow: scroll;
+}
+
+.speech-bubble {
+  background: #efefef;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  padding: 15px;
+  position: relative;
+}
+
+.speech-bubble p {
+  margin: 0 0 10px;
+}
+.speech-bubble p:last-of-type {
+  margin-bottom: 0;
+}
+
+.speech-bubble::after {
+  border-left: 20px solid transparent;
+  border-top: 20px solid #efefef;
+  bottom: -20px;
+  content: "";
+  position: absolute;
+  right: 20px;
+}
+
+.animal-details-foundation-image{
+  width: 30%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.animal-details-foundation-information-container{
+  width: 70%;
+  justify-content: space-evenly;
+}
+
+.shelter-logo{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30%;
+
 }
