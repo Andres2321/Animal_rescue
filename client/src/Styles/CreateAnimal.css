@@ -7,6 +7,7 @@ height: 100vh;
   width: 40vw;
   height: 100vh;
   background-color: rgb(231, 231, 231);
+  display: block;
 }
 
 .create-animal-input{
@@ -50,10 +51,10 @@ height: 100vh;
 .preview-container{
   width: 30vw;
   height: 70vh;
-  margin: 25% auto;
+  margin: 0 auto;
+
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(1, 12, 175);
-  box-sizing: border-box;
 }
 
 .preview-image-container{
@@ -64,7 +65,6 @@ object-fit: cover;
 }
 
 .preview-image{
-justify-content: space-evenly;
 width: 100%;
 }
 
@@ -74,7 +74,7 @@ height: 30%;
 }
 
 .hvr-float-shadow {
-  display: inline-block;
+  /* display: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);

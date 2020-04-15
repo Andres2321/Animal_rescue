@@ -18,12 +18,9 @@ function Home(props) {
             :
             <div>
               <div className='flex row'>
-                <Link to='/register'>
-                  <h3 className='no-margin white home-signup'>Sign Up</h3>
-                </Link>
-                <Link to='/login'>
-                  <h3 className='no-margin white home-login'>Log In</h3>
-                </Link>
+
+                <h3 className='white home-signup'><Link to='/register'>Sign Up</Link></h3>
+                <h3 className='white home-login'><Link id='anchor-style' to='/login'>Log In</Link></h3>
               </div>
             </div>}
         </div>

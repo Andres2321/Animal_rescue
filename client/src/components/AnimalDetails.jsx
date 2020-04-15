@@ -61,7 +61,7 @@ function AnimalDetails(props) {
               {
                 currentUser && currentUser.is_admin !== null ?
                   <button
-                    className='animial-details-edit-button'
+                    className='animal-details-edit-button'
                     onClick={() => {
                       props.history.push(`/animals/${animal.id}/edit`)
                     }}>Edit</button>

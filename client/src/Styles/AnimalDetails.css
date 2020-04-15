@@ -1,6 +1,6 @@
 .animal-details-main-container{
 width: 100vw;
-height: 100vh;
+height: 100%;
 margin: 0;
 }
 
@@ -36,9 +36,9 @@ background-color: rgb(248, 248, 248);
   margin: auto;
 }
 
-.animial-details-edit-button{
+.animal-details-edit-button{
   width: 100%;
-  margin-bottom: 0;
+  margin-bottom: 0%;
   height: 7%;
   font-size: x-large;
   background-color: rgb(236, 233, 21);

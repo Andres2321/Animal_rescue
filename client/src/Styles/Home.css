@@ -58,3 +58,19 @@ background-color: rgb(255, 123, 0);
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+
+#anchor-style{
+text-decoration: none;
+}
+
+.home-signup, .home-login{
+  margin: 2% 2%;
+  width: 6vw;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}

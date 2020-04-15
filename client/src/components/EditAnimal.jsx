@@ -14,38 +14,38 @@ class EditAnimal extends Component {
     const { handleFormChange, updateAnimal, animalForm, currentUser, handleLogout, getAnimal } = this.props
     return (
       <div>
-          <div className='top-header-div row flex'>
-            <h2 className='center'>
-              <Link to='/' className='header-title'>
-                The Broome County Humane Society
+        <div className='top-header-div row flex'>
+          <h2 className='center'>
+            <Link to='/' className='header-title'>
+              The Broome County Humane Society
             </Link>
-            </h2>
+          </h2>
 
-            {currentUser ?
-              <>
-                {/* If current user is true  */}
-                <h3 onClick={handleLogout} className='logout'>
-                  Log Out
+          {currentUser ?
+            <>
+              {/* If current user is true  */}
+              <h3 onClick={handleLogout} className='logout'>
+                Log Out
             </h3>
-              </>
-              :
-              // If current user is false
-              <>
-                <div className='flex row'>
-                  <Link to='/register' className='center sign-up'>
-                    <h3>Sign Up</h3>
-                  </Link>
-                  <Link to='/login' className='center log-in'>
-                    <h3>Log In</h3>
-                  </Link>
-                </div>
-              </>}
+            </>
+            :
+            // If current user is false
+            <>
+              <div className='flex row'>
+                <Link to='/register' className='center sign-up'>
+                  <h3>Sign Up</h3>
+                </Link>
+                <Link to='/login' className='center log-in'>
+                  <h3>Log In</h3>
+                </Link>
+              </div>
+            </>}
         </div>
-        
+
         <div className='edit-animals-container flex row'>
-          <div className=' flex column created-animal-card-container'>
-            {/* <h2 className='preview-title'>Preview</h2> */}
-            <div className='flex column preview-container hvr-float-shadow' id='border-color'>
+
+          <div className='created-animal-card-container'>
+            <div className='flex column preview-container' id='border-color'>
               <div className='preview-image-container'>
                 <img className='preview-image' alt='None Selected' src={animalForm.image_url} />
               </div>
