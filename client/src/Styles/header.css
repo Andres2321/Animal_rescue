@@ -61,7 +61,7 @@ list-style: none;
 transition: .1s;
 }
 
-.main-nav > ul > li > a, h1 {
+.main-nav > ul > li > a{
 text-transform: uppercase;
 color: rgb(255, 255, 255);
 }
@@ -72,7 +72,6 @@ text-decoration: none;
 padding: 5px 15px;
 color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
-
 }
 
 .main-nav ul ul {
@@ -90,6 +89,7 @@ top: 0;
 
 .main-nav li:hover li {
 background: #D3D4D6;
+
 }
 
 .main-nav li li:hover, .main-nav li li:hover li {
@@ -103,3 +103,4 @@ background: #D3D4D6;
 .main-nav li:hover > ul {
 visibility: visible;
 }
+

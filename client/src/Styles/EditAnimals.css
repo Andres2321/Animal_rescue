@@ -1,6 +1,5 @@
 .edit-animals-container{
   width: 100vw;
-  height: 100vh;
 }
 
 .edit-animal-form{
@@ -54,4 +53,8 @@
 -webkit-box-shadow: -1px 3px 9px -4px rgba(0,0,0,0.39);
 -moz-box-shadow: -1px 3px 9px -4px rgba(0,0,0,0.39);
 box-shadow: -1px 3px 9px -4px rgba(0,0,0,0.39);
+}
+
+.edit-subtitle-margin{
+  margin: 3% 2%;
 }

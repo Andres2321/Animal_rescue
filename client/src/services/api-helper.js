@@ -50,7 +50,6 @@ export const showAnimal = async (id) => {
 // =====================Create Animal========================
 
 export const createAnimal = async (params) => {
-  console.log(params)
   const response = await api.post('/animals', { animal: params })
   return response.data
 }

@@ -10,7 +10,7 @@ function Animals(props) {
       className='animal-card-container flex column hvr-grow-shadow border-radius' id='animals-box-shadow'
       key={animal.id}>
       <div className='animal-image-container border-radius'>
-        <img alt={animal.name} src={animal.image_url} className='animal-image' />
+        <img alt='animal' src={animal.image_url} className='animal-image' />
       </div>
       <div className='animal-details flex column'>
         <p className='details subtitle-margin'>Name: {animal.name}</p>
@@ -62,7 +62,9 @@ function Animals(props) {
                 <img
                   onClick={() => { props.history.push('/animals/create') }}
                   src='https://i.imgur.com/M44d4zG.png?2'
-                  className='addition-image' />
+                  className='addition-image'
+                  alt='addition'
+                />
               </div>
             </>
             :

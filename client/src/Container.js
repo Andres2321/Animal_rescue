@@ -86,7 +86,7 @@ class Container extends Component {
   getAnimal = async (id) => {
     const animal = await showAnimal(id)
     this.setState({
-      animal
+      animal: animal
     })
   }
 
@@ -165,13 +165,21 @@ class Container extends Component {
     this.setState(prevState => ({
       animals: prevState.animals.filter(animal => animal.id !== id)
     }))
-    console.log('push')
     this.props.history.push('/animals')
   }
 
   // Create likes and comments
   createLikesAndComments = async (id) => {
-    const comments = await createLikeComment({ ...this.state.likes, user_id: this.state.currentUser.id, animal_id: id })
+    const comment = await createLikeComment({ ...this.state.likes, user_id: this.state.currentUser.id, animal_id: id })
+    let animal = this.state.animals.filter(item => item.id === parseInt(id))
+    animal[0].likes.unshift(comment)
+    this.setState(prevState => ({
+      animals:[ 
+        ...prevState.animals.map((element) => (
+          element.id === animal[0].id ? animal[0]: element
+        ))
+      ]
+    }))
   }
 
   // Will store form inputs in state
@@ -224,7 +232,7 @@ class Container extends Component {
 
   render() {
     const { handleLogin, handleLogout, authHandleChange, handleRegister, newAnimal, handleFormChange, updateAnimal, mountEditForm, createLikesAndComments, handleLikeFormChange, deleteAnimal } = this
-    const { authFormData, animals, animalForm, currentUser, likes } = this.state
+    const { authFormData, animals, animalForm, currentUser, likes, animal } = this.state
     return (
       <>
         {/* =================Routes================= */}
@@ -292,12 +300,12 @@ class Container extends Component {
               return <AnimalDetails
                 handleLogout={handleLogout}
                 likes={likes}
+                animal={animal}
                 deleteAnimal={deleteAnimal}
                 handleLikeFormChange={handleLikeFormChange}
                 createLikesAndComments={createLikesAndComments}
                 handleFormChange={handleFormChange}
                 currentUser={currentUser}
-                animal={animal}
               />
             }}
           />
@@ -307,12 +315,13 @@ class Container extends Component {
             path='/animals/:id/edit'
             render={(props) => {
               const { id } = props.match.params
-              const animal = this.state.animals.find(item => item.id === parseInt(id))
+              const findAnimal = animals.find(item => item.id === parseInt(id))
               return <EditAnimal
                 {...props}
                 currentUser={currentUser}
                 id={id}
-                animal={animal}
+                getAnimal={animal}
+                animal={findAnimal}
                 handleLogout={handleLogout}
                 mountEditForm={mountEditForm}
                 handleFormChange={handleFormChange}

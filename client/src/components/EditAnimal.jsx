@@ -11,10 +11,9 @@ class EditAnimal extends Component {
   }
 
   render() {
-    const { handleFormChange, updateAnimal, animalForm, currentUser, handleLogout } = this.props
+    const { handleFormChange, updateAnimal, animalForm, currentUser, handleLogout, getAnimal } = this.props
     return (
-      <>
-        <div>
+      <div>
           <div className='top-header-div row flex'>
             <h2 className='center'>
               <Link to='/' className='header-title'>
@@ -41,19 +40,19 @@ class EditAnimal extends Component {
                   </Link>
                 </div>
               </>}
-          </div>
         </div>
+        
         <div className='edit-animals-container flex row'>
           <div className=' flex column created-animal-card-container'>
             {/* <h2 className='preview-title'>Preview</h2> */}
             <div className='flex column preview-container hvr-float-shadow' id='border-color'>
               <div className='preview-image-container'>
-                <img className='preview-image' alt='Place an image' src={animalForm.image_url} />
+                <img className='preview-image' alt='None Selected' src={animalForm.image_url} />
               </div>
               <div className='flex column preview-details'>
-                <p>Name: {animalForm.name}</p>
-                <p>Breed: {animalForm.breed}</p>
-                <p>Age: {animalForm.age}</p>
+                <p className='edit-subtitle-margin'>Name: {animalForm.name}</p>
+                <p className='edit-subtitle-margin'>Breed: {animalForm.breed}</p>
+                <p className='edit-subtitle-margin'>Age: {animalForm.age}</p>
               </div>
             </div>
           </div>
@@ -236,7 +235,7 @@ class EditAnimal extends Component {
             <button className='edit-animal-submit-button'>Submit</button>
           </form>
         </div >
-      </>
+      </div>
     )
   }
 }

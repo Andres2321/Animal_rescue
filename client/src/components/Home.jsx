@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 
 function Home(props) {
@@ -18,65 +18,74 @@ function Home(props) {
             :
             <div>
               <div className='flex row'>
-                <Link to='/register' className=''>
-                  <h3 className='no-margin white'>Sign Up</h3>
+                <Link to='/register'>
+                  <h3 className='no-margin white home-signup'>Sign Up</h3>
                 </Link>
-                <Link to='/login' className=''>
-                  <h3 className='no-margin white'>Log In</h3>
+                <Link to='/login'>
+                  <h3 className='no-margin white home-login'>Log In</h3>
                 </Link>
               </div>
             </div>}
         </div>
+        <div>
           <nav className='main-nav'>
             <ul className='flex row center'>
               <li>
-                <Link href="">Adoptions</Link>
+                <Link href="#">Adoptions</Link>
                 <ul>
-                  <li><Link to=''>Adoption details</Link></li>
-                  <li><Link to=''>Barn cats</Link></li>
-                  <li><Link to=''>Medically Needy Animals</Link></li>
-                  <li><Link to=''>Senior Dogs</Link></li>
+                  <li><Link to='#'>Adoption details</Link></li>
+                  <li><Link to='#'>Barn cats</Link></li>
+                  <li><Link to='#'>Medically Needy Animals</Link></li>
+                  <li><Link to='#'>Senior Dogs</Link></li>
                 </ul>
               </li>
               <li>
-                <Link href="">Services</Link>
+                <Link href="#">Services</Link>
                 <ul>
-                  <li><Link to="">Spay/Neutered</Link></li>
-                  <li><Link to="">Boarding</Link></li>
-                  <li><Link to="">Grooming</Link></li>
-                  <li><Link to="">Euthanasia and Cremation</Link></li>
+                  <li><Link to="#">Spay/Neutered</Link></li>
+                  <li><Link to="#">Boarding</Link></li>
+                  <li><Link to="#">Grooming</Link></li>
+                  <li><Link to="#">Euthanasia and Cremation</Link></li>
                 </ul>
               </li>
-              <li><Link to="">Events</Link></li>
-              <li><Link to="">Volunteer</Link></li>
+              <li><Link to="#">Events</Link></li>
+              <li><Link to="#">Volunteer</Link></li>
               <li>
-                <Link to="">About Us</Link>
+                <Link to="#">About Us</Link>
                 <ul>
-                  <li><Link to="">Ways to Help</Link></li>
-                  <li><Link to="">Our Supply Whishlist</Link></li>
-                  <li><Link to="">Employment</Link></li>
-                  <li><Link to="">Blog</Link></li>
-                  <li><Link to="">Animal Cruelty</Link></li>
-                  <li><Link to="">Local Resources</Link></li>
+                  <li><Link to="#">Ways to Help</Link></li>
+                  <li><Link to="#">Our Supply Whishlist</Link></li>
+                  <li><Link to="#">Animal Cruelty</Link></li>
+                  <li><Link to="#">Local Resources</Link></li>
                 </ul>
               </li>
             </ul>
           </nav>
-      </div>
-      <div className='flex column'>
-        <div className=''>
-          <div className=''></div>
-          <div className=''></div>
+
         </div>
-
-
+      </div>
+      <div className='flex column home-button-container'>
+        <h1 className='adoption-title'>Thinking about adoption or donating?</h1>
+        <div className='flex row home-buttons'>
+          <button
+            onClick={() => { props.history.push('/animals') }}
+            className='adopt-button'>Adopt</button>
+          <button
+            className='donate-button'>
+            <a
+              className='donation-link'
+              href='https://www.paypal.com/donate/?token=bqigvM9NgTNGeas-J7PNPgniu2BjUL3othMbzd932JCC-S5exG1MDiJhQOaHaJffMObzCW&country.x=US&locale.x=US'>
+              Donate
+            </a>
+          </button>
+        </div>
       </div>
     </>
   )
 
 }
 
-export default Home
+export default withRouter(Home)
 
 
 

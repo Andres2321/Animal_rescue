@@ -216,7 +216,7 @@ function CreateAnimal(props) {
           {/* <h2 className='preview-title'>Preview</h2> */}
           <div className='flex column preview-container hvr-float-shadow'>
             <div className='preview-image-container'>
-              <img className='preview-image' alt='Place an image' src={animalForm.image_url} />
+              <img className='preview-image' alt='None selected' src={animalForm.image_url} />
             </div>
             <div className='flex column preview-details'>
               <p className='preview-data'>Name: {animalForm.name}</p>
