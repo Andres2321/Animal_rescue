@@ -12,3 +12,10 @@ Animal.create!(
   breed: 'asda'
 )
 
+User.create!(
+  username: 'aa1234',
+  email: 'a1234@live.com',
+  password: '123456',
+  is_admin: true,
+  
+)
