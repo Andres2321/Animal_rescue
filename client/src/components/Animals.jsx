@@ -9,8 +9,10 @@ function Animals(props) {
       onClick={() => { props.history.push(`/animals/${animal.id}`) }}
       className='animal-card-container flex column hvr-grow-shadow border-radius' id='animals-box-shadow'
       key={animal.id}>
-      <div className='animal-image-container border-radius'>
-        <img alt='animal' src={animal.image_url} className='animal-image' />
+      <div
+        style={{backgroundImage: `url(${animal.image_url})`}}
+        className='animal-image-container border-radius'>
+        {/* <img alt='animal' src={animal.image_url} className='animal-image' /> */}
       </div>
       <div className='animal-details flex column'>
         <p className='details subtitle-margin'>Name: {animal.name}</p>

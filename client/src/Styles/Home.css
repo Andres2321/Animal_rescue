@@ -22,6 +22,7 @@ justify-content: space-between;
 
 .adoption-title{
   margin: 3% auto;
+  text-transform: uppercase;
 }
 
 .home-buttons{
@@ -29,7 +30,7 @@ justify-content: space-between;
 }
 
 .home-button-container{
-  height: 25.4vh;
+  height: 30vh;
   justify-content: space-between;
 }
 

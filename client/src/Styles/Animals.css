@@ -23,6 +23,9 @@ cursor: pointer;
   height: 70%;
   text-align: center;
   object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .animal-image{
