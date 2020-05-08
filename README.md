@@ -2,6 +2,21 @@
 
 I wanted to make a mock website for my local animal shelter. As a guest visiting the website, you will be able to browse for pets to adopt, make donations, explore some services, and much more. An administrator can create, update, and delete animal entries into the application. Extra features such as sorting/filters will facilitate the search for the perfect pet.
 
+# Installation Instructions
+
+## Front-end
+
+```
+cd client
+npm i
+```
+
+## Back-end
+
+```
+cd root
+bundle
+```
 
 # MVP
 
