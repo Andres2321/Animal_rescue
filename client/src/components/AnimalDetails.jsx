@@ -7,6 +7,7 @@ function AnimalDetails(props) {
   const comments = animal && animal.likes.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
   return (
     <>
+      <a href='/animals'>Return To Animals</a>
       <div className=''>
         <div className='top-header-div row flex'>
           <h2 className='center'>

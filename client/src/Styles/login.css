@@ -12,6 +12,9 @@ margin: 2% 90%;
   height: 100%;
   background-image: url(https://cdn.pixabay.com/photo/2016/02/19/11/53/pug-1210025_1280.jpg);
   justify-content: space-between;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .register-button{

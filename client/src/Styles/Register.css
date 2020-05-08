@@ -17,6 +17,9 @@ background-color: rgb(231, 231, 231);
   width: 60%;
   height: 100%;
   background-image: url(https://cdn.pixabay.com/photo/2015/03/26/09/43/dog-690176_1280.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .register-input-style{
